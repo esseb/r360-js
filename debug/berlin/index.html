@@ -37,6 +37,9 @@
             var latlon4 = [52.5435,13.3633];
             var latlon5 = [52.5475,13.3630];
 
+
+            console.log("x: " + (L.Projection.SphericalMercator.project(L.latLng(latlon)).x * 6378137) + " y:" + L.Projection.SphericalMercator.project(L.latLng(latlon)).y * 6378137);
+
             //console.log(r360.Util.latLngToWebMercator(L.latLng(latlon)));
 
                // add the map and set the initial center to berlin
@@ -60,22 +63,22 @@
             r360.config.serviceUrl = 'http://localhost:8080/api/';
 
             r360.config.defaultTravelTimeControlOptions.travelTimes = [
-                { time : 600  , color : "#006837", opacity : 1.0 },
-                { time : 1200  , color : "#39B54A", opacity : 1.0 },
-                { time : 1800  , color : "#8CC63F", opacity : 1.0 },
-                { time : 2400 , color : "#F7931E", opacity : 1.0 },
-                { time : 3000 , color : "#F15A24", opacity : 1.0 },
-                { time : 3600 , color : "#C1272D", opacity : 1.0 }
+                { time : 1200  , color : "#006837", opacity : 1.0 },
+                { time : 2400  , color : "#39B54A", opacity : 1.0 },
+                { time : 3600  , color : "#8CC63F", opacity : 1.0 },
+                { time : 4800 , color : "#F7931E", opacity : 1.0 },
+                { time : 6000 , color : "#F15A24", opacity : 1.0 },
+                { time : 7200 , color : "#C1272D", opacity : 1.0 }
             ];
 
             var travelTimeControl = r360.travelTimeControl({
                 travelTimes     : [
-                    { time : 600  , color : "#006837", opacity : 1  },
-                    { time : 1200 , color : "#39B54A", opacity : 0.8},
-                    { time : 1800 , color : "#8CC63F", opacity : 0.6},
-                    { time : 2400 , color : "#F7931E", opacity : 0.4},
-                    { time : 3000 , color : "#F15A24", opacity : 0.2},
-                    { time : 3600 , color : "#C1272D", opacity : 0.1}
+                    { time : 1200  , color : "#006837", opacity : 1  },
+                    { time : 2400 , color : "#39B54A", opacity : 0.8},
+                    { time : 3600 , color : "#8CC63F", opacity : 0.6},
+                    { time : 4800 , color : "#F7931E", opacity : 0.4},
+                    { time : 6000 , color : "#F15A24", opacity : 0.2},
+                    { time : 7200 , color : "#C1272D", opacity : 0.1}
                 ], position : 'topright', label: 'Travel time: ', initValue: 10
             });
 
